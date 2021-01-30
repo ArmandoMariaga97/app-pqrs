@@ -4,12 +4,17 @@ namespace App\Http\Livewire;
 
 use Illuminate\Support\Facades\Auth;
 use App\PQR;
+use App\User;
 use Illuminate\Support\Str;
 
 use Livewire\Component;
 
 // necesario para la carga de archivos
 use Livewire\WithFileUploads;
+
+use Illuminate\Support\Facades\Session;
+use App\Mail\RespuestaPQRS;
+use Illuminate\Support\Facades\Mail;
 
 class PqrsAceptados extends Component
 {
@@ -45,9 +50,8 @@ class PqrsAceptados extends Component
             $pqrs_old = PQR::find($id_pqrs);
             $pqrs_old->descripcion_respuesta = $this->respuesta;
             $pqrs_old->estado = '3';
-            $pqrs_old->save();
 
-            session()->flash('respuesta','ok');
+            $pqrs_old->save();
 
         }else{
 
@@ -71,5 +75,16 @@ class PqrsAceptados extends Component
             session()->flash('respuesta','ok');
 
         }
+
+        $pqrs_res = PQR::where('id', $id_pqrs)->with('clienteCreador')->first();
+
+        $datos = [
+            'radicado' => $pqrs_res->radicado,
+        ];
+
+        // envio de emaill
+        Mail::to($pqrs_res->clienteCreador->email)->queue(new RespuestaPQRS($datos));
+
+        session()->flash('respuesta','ok');
     }
 }

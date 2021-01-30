@@ -11,6 +11,10 @@ use Livewire\Component;
 use App\TipoPQR;
 use App\PQR;
 
+use Illuminate\Support\Facades\Session;
+use App\Mail\CreatePQRS;
+use Illuminate\Support\Facades\Mail;
+
 // necesario para la carga de archivos
 use Livewire\WithFileUploads;
 
@@ -78,7 +82,21 @@ class NuevoPqrs extends Component
         $alter_radicado->radicado = $mfecha.$dfecha.$alter_radicado->id;
 
         $alter_radicado->save();
+        
+        $datos = [
+            'radicado' => $this->radicado,
+            'nombre' => auth()->user()->name,
+            'correo' => auth()->user()->email,
+            'telefono' => auth()->user()->celular,
+            'ciudad' => auth()->user()->ciudad,
+            'direccion' => auth()->user()->direccion,
+            't_pqrs' => $this->t_pqrs,
+            'descripcion_pqrs' => $this->descripcion_pqrs,
+        ];
 
+
+        // envio de emaill
+        Mail::to(auth()->user()->email)->queue(new CreatePQRS($datos));
 
         $this->reset('t_pqrs','descripcion_pqrs');
 
