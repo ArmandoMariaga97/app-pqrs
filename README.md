@@ -1,6 +1,7 @@
 
-## Jorge Armando Mariaga Galeano
+## APP para gestion de PQRS
 
+cuenta con panel Admin, Asesor Y Cliente.
 La instalacion es muy sencillo.
 
 una vez descargado ejecutamos 
@@ -25,8 +26,6 @@ Por comodidad en el formulario de resgitro el usuario puede seleccionar su rol, 
 se utilizó MySQL, para la creación de la DB.
 
 tambien se subira el proyecto a un link de prueba
-
-<a href="https://hygapps.com/armando-mariaga">Link de prueba</a>
 
 
 

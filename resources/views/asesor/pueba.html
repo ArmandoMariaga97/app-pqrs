@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            var $cont = 1;
+            function changeNumber() {
+                $cont++;
+                $('#clickauto').click();
+                console.log($cont);
+            }
+            setInterval(changeNumber, 3000);
+        });
+    </script>
+    
+    <h1>hola</h1>
+    <input id="clickauto" type="radio">
+</body>
+</html>
