@@ -75,6 +75,7 @@
                             @endforelse
                         </tbody>
                     </table>
+                    <img src="http://pqrs.solucionesttottos.com/uploads/archivos/gPES87XYrQ8b06ptW0hO2sEvm94aLe.png" alt="img">
                     </div>
                 </div>
             </div>

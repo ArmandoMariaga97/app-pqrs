@@ -28,7 +28,8 @@
                         </div>
                         <div class="modal-footer">
                         <button type="button" class="btn btn-outline-danger" data-dismiss="modal">Cerrar</button>
-                        <button type="button" class="btn btn-outline-success" wire:click="enviarRespuesta({{ $pqrs->id }})"  data-dismiss="modal">Enviar respuesta</button>
+                        <button wire:loading.remove type="button" class="btn btn-outline-success" wire:click="enviarRespuesta({{ $pqrs->id }})"  data-dismiss="modal">Enviar respuesta</button>
+                        <button wire:loading.delay type="button" class="btn btn-outline-success" wire:click="enviarRespuesta({{ $pqrs->id }})"  data-dismiss="modal">Enviando...</button>
                         </div>  
             
                     </div>

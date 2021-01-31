@@ -50,7 +50,7 @@ class AsesoresComponent extends Component
         $datos = [
             'name'          => $this->name,
             'email'         => $this->email,
-            't_documento'   => 'Cédiña de ciudadania',
+            't_documento'   => 'Cédula de ciudadania',
             'documento'     => $this->documento,
             'ciudad'        => $this->ciudad,
             'celular'        => $this->celular,

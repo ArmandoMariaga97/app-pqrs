@@ -14,7 +14,7 @@
               <div class="card border-grey border-lighten-3 px-1 py-1 box-shadow-3 m-0">
                 <div align="center" class="card-body">
                   <span class="card-title text-center">
-                    <img src="/img/logo.png" class="img-fluid mx-auto d-block pt-2"
+                    <img src="{{ asset('img/logo.png') }}" class="img-fluid mx-auto d-block pt-2"
                     width="250" alt="logo">
                   </span>
                   <span style="color:green;">Expertos en soluciones Tic.</span>

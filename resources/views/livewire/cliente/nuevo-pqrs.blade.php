@@ -52,8 +52,11 @@
                                     </div>
 
                                     <div class="col-md-8 row justify-content-center">
-                                        <div class="col-md-10">
+                                        <div wire:loading.remove class="col-md-10">
                                             <a wire:click="enviarPQRS" class="btn btn-outline-success btn-block mt-1"><i class="ft-user"></i> Enviar PQRS</a>
+                                        </div>
+                                        <div wire:loading class="col-md-10">
+                                            <a class="btn btn-outline-success btn-block mt-1"><i class="ft-user"></i> Enviando...</a>
                                         </div>
                                     </div>
 
